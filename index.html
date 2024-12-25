@@ -28,7 +28,13 @@
             border-radius: 50%;
             margin: 0 auto 20px;
             border: 4px solid white;
-            background-color: #ddd; /* Placeholder até adicionar uma foto real */
+            overflow: hidden; /* Garante que a imagem não ultrapasse as bordas arredondadas */
+        }
+
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Mantém a proporção da imagem */
         }
 
         nav {
@@ -262,7 +268,9 @@
 </head>
 <body>
     <header>
-        <div class="profile-pic"></div>
+        <div class="profile-pic">
+            <img src="./imagens/eu.jpg" alt="Foto de Gabriel Cavalieri">
+        </div>
         <h1>Gabriel Cavalieri</h1>
         <p>Desenvolvedor & Entusiasta de IA</p>
         <div class="menu-hamburger" onclick="toggleMenu()">
