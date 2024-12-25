@@ -12,29 +12,92 @@
             background-color: #f4f4f4;
             color: #333;
         }
+
         header {
             background-color: #4CAF50;
             color: white;
             padding: 20px 10px;
             text-align: center;
+            position: relative;
         }
+
         nav {
             text-align: center;
             margin: 20px 0;
         }
+
         nav a {
             text-decoration: none;
             color: #4CAF50;
             margin: 0 15px;
             font-weight: bold;
+            transition: all 0.3s ease;
         }
+
+        nav a:hover {
+            color: #2E7D32;
+            border-bottom: 2px solid #2E7D32;
+        }
+
         section {
             max-width: 900px;
             margin: auto;
             padding: 20px;
             background: white;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
         }
+
+        .projetos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .projeto-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .projeto-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .menu-hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .menu-hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 2px 0;
+            transition: 0.4s;
+        }
+
+        .redes-sociais {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .redes-sociais a {
+            margin: 0 10px;
+            color: #4CAF50;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .redes-sociais a:hover {
+            color: #2E7D32;
+        }
+
         footer {
             text-align: center;
             padding: 10px;
@@ -42,15 +105,56 @@
             color: white;
             margin-top: 20px;
         }
+
+        @media screen and (max-width: 768px) {
+            .menu-hamburger {
+                display: flex;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+
+            nav {
+                display: none;
+                width: 100%;
+                position: absolute;
+                top: 80px;
+                background: white;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+            }
+
+            nav.active {
+                display: flex;
+                flex-direction: column;
+            }
+
+            nav a {
+                display: block;
+                padding: 15px;
+                margin: 0;
+                border-bottom: 1px solid #eee;
+            }
+
+            section {
+                margin: 10px;
+                width: auto;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Gabriel Cavalieri</h1>
         <p>Inovando com Tecnologia e Criatividade</p>
+        <div class="menu-hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </header>
 
-    <nav>
+    <nav id="menu">
         <a href="#sobre-mim">Sobre Mim</a>
         <a href="#projetos">Projetos</a>
         <a href="#contato">Contato</a>
@@ -63,28 +167,48 @@
 
     <section id="projetos">
         <h2>Projetos</h2>
-        <ul>
-            <li>
-                <strong>Sistema de Clonagem de Voz</strong><br>
-                Protótipo para personalizar vozes, atendendo a necessidades especiais. <br>
+        <div class="projetos-grid">
+            <div class="projeto-card">
+                <strong>Sistema de Clonagem de Voz</strong>
+                <p>Protótipo para personalizar vozes, atendendo a necessidades especiais.</p>
                 <em>Tecnologias: Python, TensorFlow</em>
-            </li>
-            <li>
-                <strong>Assistente de IA Pessoal</strong><br>
-                Sistema integrado para gerenciar estudos e tarefas. <br>
+            </div>
+            <div class="projeto-card">
+                <strong>Assistente de IA Pessoal</strong>
+                <p>Sistema integrado para gerenciar estudos e tarefas.</p>
                 <em>Tecnologias: APIs do Google, JavaScript</em>
-            </li>
-        </ul>
+            </div>
+        </div>
     </section>
 
     <section id="contato">
         <h2>Contato</h2>
         <p>Entre em contato comigo para colaborar ou saber mais sobre meus projetos.</p>
         <p>Email: <a href="mailto:seuemail@example.com">seuemail@example.com</a></p>
+        
+        <div class="redes-sociais">
+            <a href="#" target="_blank">LinkedIn</a>
+            <a href="#" target="_blank">GitHub</a>
+            <a href="#" target="_blank">Twitter</a>
+        </div>
     </section>
 
     <footer>
         <p>&copy; 2024 Gabriel Cavalieri. Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('active');
+        }
+
+        // Fecha o menu quando clicar em um link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('menu').classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
