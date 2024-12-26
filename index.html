@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio de Gabriel Cavalieri</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <style>
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
+            font-family: 'Roboto', Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
@@ -28,13 +30,13 @@
             border-radius: 50%;
             margin: 0 auto 20px;
             border: 4px solid white;
-            overflow: hidden; /* Garante que a imagem não ultrapasse as bordas arredondadas */
+            overflow: hidden;
         }
 
         .profile-pic img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Mantém a proporção da imagem */
+            object-fit: cover;
         }
 
         nav {
@@ -288,14 +290,14 @@
         <a href="#contato">Contato</a>
     </nav>
 
-    <section id="sobre-mim">
+    <section id="sobre-mim" data-aos="fade-up">
         <h2>Sobre Mim</h2>
         <p>Fala, galera! Sou o Gabriel Cavalieri, um desenvolvedor capixaba apaixonado por tecnologia e inovação. Atualmente, estou focado em desenvolver soluções com Inteligência Artificial que possam impactar positivamente a vida das pessoas.</p>
         <p>Venho me especializando em desenvolvimento de software e IA. Quando não estou codando, você me encontra estudando sobre novas tecnologias ou jogando um game.</p>
         <a href="./arquivos/cv.pdf" class="btn" download>Baixar CV</a>
     </section>
 
-    <section id="skills">
+    <section id="skills" data-aos="fade-up">
         <h2>Minhas Skills</h2>
         <div class="skills">
             <div class="skill-item">
@@ -305,136 +307,85 @@
                 </div>
             </div>
             <div class="skill-item">
-                <div class="skill-name">TensorFlow</div>
+                <div class="skill-name">JavaScript</div>
                 <div class="skill-bar">
                     <div class="skill-level" style="width: 85%"></div>
                 </div>
             </div>
             <div class="skill-item">
-                <div class="skill-name">JavaScript</div>
+                <div class="skill-name">Machine Learning</div>
                 <div class="skill-bar">
                     <div class="skill-level" style="width: 75%"></div>
                 </div>
             </div>
-            <div class="skill-item">
-                <div class="skill-name">Machine Learning</div>
-                <div class="skill-bar">
-                    <div class="skill-level" style="width: 80%"></div>
-                </div>
-            </div>
         </div>
     </section>
 
-    <section id="projetos">
-        <h2>Projetos</h2>
+    <section id="projetos" class="projetos" data-aos="fade-up">
+        <h2>Projetos Recentes</h2>
         <div class="projetos-grid">
             <div class="projeto-card">
                 <div class="projeto-img">
-                    <img src="/api/placeholder/400/300" alt="Sistema de Clonagem de Voz">
+                    <img src="./imagens/projeto1.jpg" alt="Projeto 1">
                 </div>
-                <strong>Sistema de Clonagem de Voz</strong>
-                <p>Desenvolvi um sistema inovador de clonagem de voz usando deep learning, focado em ajudar pessoas com necessidades especiais. O maior desafio foi otimizar o modelo para funcionar em tempo real.</p>
+                <h3>Projeto IA</h3>
+                <p>Desenvolvi um algoritmo de IA para automatização de processos.</p>
                 <div class="projeto-tecnologias">
                     <span class="tech-tag">Python</span>
                     <span class="tech-tag">TensorFlow</span>
-                    <span class="tech-tag">Deep Learning</span>
                 </div>
             </div>
             <div class="projeto-card">
                 <div class="projeto-img">
-                    <img src="/api/placeholder/400/300" alt="Assistente de IA">
+                    <img src="./imagens/projeto2.jpg" alt="Projeto 2">
                 </div>
-                <strong>Assistente de IA Pessoal</strong>
-                <p>Criei um assistente inteligente que ajuda a organizar tarefas e estudos. Implementei integração com várias APIs do Google para maximizar a produtividade do usuário.</p>
+                <h3>App Mobile</h3>
+                <p>Criação de aplicativo com React Native para gerenciamento de tarefas.</p>
                 <div class="projeto-tecnologias">
+                    <span class="tech-tag">React Native</span>
                     <span class="tech-tag">JavaScript</span>
-                    <span class="tech-tag">Google APIs</span>
-                    <span class="tech-tag">Node.js</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="blog">
-        <h2>Blog Técnico</h2>
-        <article>
-            <h3>Explorando Deep Learning na Prática</h3>
-            <p>Compartilho minha experiência implementando modelos de deep learning e dicas práticas para quem está começando...</p>
-            <a href="#" class="btn">Ler mais</a>
-        </article>
-    </section>
-
     <section id="contato">
-        <h2>Contato</h2>
-        <p>Vamo trocar uma ideia? Me manda uma mensagem!</p>
-        
-        <div class="contato-form">
-            <form id="contact-form">
-                <div class="form-group">
-                    <label>Nome</label>
-                    <input type="text" required>
-                </div>
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" required>
-                </div>
-                <div class="form-group">
-                    <label>Mensagem</label>
-                    <textarea required></textarea>
-                </div>
-                <button type="submit" class="btn">Enviar Mensagem</button>
-            </form>
-        </div>
-        
-        <div class="redes-sociais">
-            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/gabrielcavalieri" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.instagram.com/gabrielcavalieri027" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="mailto:gabrielcg260@gmail.com"><i class="fas fa-envelope"></i></a>
-        </div>
+        <h2>Entre em Contato</h2>
+        <form class="contato-form">
+            <div class="form-group">
+                <label for="nome">Seu Nome</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Seu E-mail</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" name="mensagem" required></textarea>
+            </div>
+            <button type="submit" class="btn">Enviar</button>
+        </form>
     </section>
 
     <footer>
-        <p>&copy; 2024 Gabriel Cavalieri. Feito com 💚 no ES</p>
+        <p>© 2024 Gabriel Cavalieri | Todos os direitos reservados</p>
+        <div class="redes-sociais">
+            <a href="https://www.linkedin.com/in/gabrielcavalieri/" target="_blank"><i class="fa fa-linkedin"></i></a>
+            <a href="https://github.com/gabrielcavalieri" target="_blank"><i class="fa fa-github"></i></a>
+            <a href="https://twitter.com/gabrielcavalieri" target="_blank"><i class="fa fa-twitter"></i></a>
+        </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
-        // Menu hamburger
+        // Inicialização do AOS
+        AOS.init();
+
+        // Função para alternar o menu em telas pequenas
         function toggleMenu() {
-            const menu = document.getElementById('menu');
-            menu.classList.toggle('active');
+            document.getElementById('menu').classList.toggle('active');
         }
-
-        // Animação de scroll
-        const sections = document.querySelectorAll('section');
-        
-        function checkSections() {
-            sections.forEach(section => {
-                const sectionTop = section.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                
-                if (sectionTop < windowHeight * 0.75) {
-                    section.classList.add('visible');
-                }
-            });
-        }
-
-        window.addEventListener('scroll', checkSections);
-        checkSections(); // Checar seções visíveis no carregamento inicial
-
-        // Fechar menu ao clicar em um link
-        document.querySelectorAll('nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('menu').classList.remove('active');
-            });
-        });
-
-        // Formulário de contato
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Mensagem enviada! Te respondo rapidinho! 😉');
-            this.reset();
-        });
     </script>
 </body>
 </html>
